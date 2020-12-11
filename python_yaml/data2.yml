@@ -1,0 +1,9 @@
+me:
+    skill: 2
+    power: 60
+    hp: 100
+
+difficulty:
+    skill: 0
+    power: 80
+    hp: 100
