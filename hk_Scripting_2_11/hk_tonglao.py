@@ -12,9 +12,6 @@
 """
 
 
-
-
-
 #定义类名Tonglao：类名首字母必须大写。形式：class 类名: 或 class 类名（父类名）:
 class Tonglao:
     # 定义类属性且赋值。 在类体内，方法外的是类属性
@@ -24,37 +21,52 @@ class Tonglao:
         # 实现楼上意义的固搭形式
         self.power=power
         self.hp=hp
-    # 定义了类名的一个方法（看特征有无self，函数可以没有self），同时顺带先铺垫下等下就传参。形式：def 方法名(self,参数名):
+    # 定义看见人的方法并传参数名字
     def see_pepple(self,name):
-        # 是参数不传参数值，走个过场形式还是要的，不然没存在感
-
+        # 如果名字等于无崖子
         if name=="wyz":
+            # 打印内容
             print("师弟！！！！")
+        #     否则名字等于李秋水
         elif name=="李秋水":
+            # 打印内容
             print("呸，贱人")
+            # 否则名字等于丁春秋
         elif name=="丁春秋":
+            # 打印内容
             print("“叛徒！我杀了你”")
 
+    # 定义天山折梅手方法
     def fight_zms(self,dr_hp,dr_power):
+        # 爆发力会在武力值上提升十倍
         Power_burst=self.power*10
+        # 童姥最后血量=敌人血量-童姥缩减一半血量
         finally_hp=dr_power-self.hp/2
+        # 敌人最后血量=提升而来的爆发力-敌人血量
         dr_finally_hp=Power_burst-dr_hp
+        # 如果童姥最后血量>敌人最后血量
         if finally_hp>dr_finally_hp:
+            # 童姥赢
             print("童姥赢")
+        # 如果童姥最后血量<敌人最后血量
         elif finally_hp<dr_finally_hp:
+            # 童姥输
             print("童姥输")
+        #     否则
         else:
+            # 平局就抛出异常
             raise Exception("不要平局，平局就抛出异常")
+  # 实例化童姥,传入武力和血量
 tongLao=Tonglao(100,100)
-Tonglao.fight_zms()
 
-class Xuzhu(Tonglao):
-    def read(self):
-        print("罪过罪过")
-    super().fight_zms(1000,100)
+# 调用见人方法
+tongLao.see_pepple("wyz")
 
-zxrh=Xuzhu()
-Xuzhu.read()
+# 调用天山折梅手方法
+tongLao.fight_zms(20,40)
+
+
+
 
 
 
